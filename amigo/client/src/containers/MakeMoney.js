@@ -44,40 +44,42 @@ const MakeMoney = () => {
                 </div>
                 <hr className='hr' />
                 <div className='main_text'>
-                    <p className='text'>기부 설명</p>
-                    <textarea className='explanation' />
-                    <div className='under_text'>
-                        <div className='text_left'>
-                            <p className='text'>최소 기부 금액</p>
-                            <input className='text_box' type="text" />
-                            <p className='text'>은행명</p>
-                            <select className="bank">{strtmp}</select>
-                            <p className='text'>계좌 번호</p>
-                            <input className='text_box' type="text" />
-                            <p className='text'>예금주</p>
-                            <input className='text_box' type="text" />
-                        </div>
-                        <div className='text_right'>
-                            <p className='cartagori_text'>카테고리 선택</p>
-                            <Checkbox />
-                            <p className='text'>이미지<p className='detail_text'>최대 3개까지 등록 가능합니다.</p></p>
-                            <div className='pictures'>
-                                <label className='image' for='image1'>
-                                </label>
-                                <input id='image1' type='file' style={{display: "none"}}/>
-                                <label className='image' for='image2'>
-                                </label>
-                                <input id='image2' type='file' style={{display: "none"}} />
-                                <label className='image' for='image3'>
-                                </label>
-                                <input id='image3' type='file' style={{display: "none"}} />
+                    <form action="" method="" >
+                        <p className='text'>기부 설명</p>
+                        <textarea className='explanation' />
+                        <div className='under_text'>
+                            <div className='text_left'>
+                                <p className='text'>최소 기부 금액</p>
+                                <input className='text_box' type="text" />
+                                <p className='text'>은행명</p>
+                                <select className="bank">{strtmp}</select>
+                                <p className='text'>계좌 번호</p>
+                                <input className='text_box' type="text" />
+                                <p className='text'>예금주</p>
+                                <input className='text_box' type="text" />
                             </div>
-                            <div className='button'>
-                                <button className='back' onClick={()=>{ navigate('/MoneyDetail') }}>뒤로가기</button>
-                                <button className='make_donation'>기부 만들기</button>
+                            <div className='text_right'>
+                                <p className='cartagori_text'>카테고리 선택</p>
+                                <Checkbox />
+                                <p className='text'>이미지<p className='detail_text'>최대 3개까지 등록 가능합니다.</p></p>
+                                <div className='pictures'>
+                                    <label className='image' for='image1'>
+                                    </label>
+                                    <input id='image1' type='file' style={{display: "none"}}/>
+                                    <label className='image' for='image2'>
+                                    </label>
+                                    <input id='image2' type='file' style={{display: "none"}} />
+                                    <label className='image' for='image3'>
+                                    </label>
+                                    <input id='image3' type='file' style={{display: "none"}} />
+                                </div>
+                                <div className='button'>
+                                    <button className='back' onClick={()=>{ navigate('/MoneyDetail') }}>뒤로가기</button>
+                                    <button className='make_donation'>기부 만들기</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </haeder>
         </div>
