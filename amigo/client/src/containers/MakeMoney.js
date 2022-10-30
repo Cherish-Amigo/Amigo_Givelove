@@ -65,7 +65,7 @@ const MakeMoney = () => {
                                 <div className='pictures'>
                                     <label className='image' for='image1'>
                                     </label>
-                                    <input id='image1' type='file' style={{display: "none"}}/>
+                                    <input id='image1' type='file' style={{display: "none"}} />
                                     <label className='image' for='image2'>
                                     </label>
                                     <input id='image2' type='file' style={{display: "none"}} />
