@@ -44,7 +44,7 @@ const MakeMoney = () => {
                 </div>
                 <hr className='hr' />
                 <div className='main_text'>
-                    <form action="" method="" >
+                    <form action="http://localhost:5000/" method="" >
                         <p className='text'>기부 설명</p>
                         <textarea className='explanation' />
                         <div className='under_text'>

@@ -17,6 +17,7 @@ const MakeArticle = () => {
     const [word, setWord] = useState(0)
 
     let navigate=useNavigate();
+    
     const [enroll_company, setEnroll_company] = useState({
         address:'',
     });
