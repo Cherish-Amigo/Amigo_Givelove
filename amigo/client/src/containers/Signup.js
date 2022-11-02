@@ -38,7 +38,7 @@ function Signup() {
     e.preventDefault();
     let body = {
       id: Id,
-      pass : Password,
+      password : Password,
       name : Name,
       number: Number
     };
@@ -58,7 +58,7 @@ function Signup() {
               <div id="id">아이디</div>
               <input id="idInput" name="id" value={Id} onChange={idHandler}></input>
               <button id="ck">중복확인</button>
-              <div id="password" name="pw" value={Password} onChange={passwordHandler}>비밀번호</div>
+              <div id="password" name="password" value={Password} onChange={passwordHandler}>비밀번호</div>
               <input id="inputTxt" type="password"></input>
               <div>이름</div>
               <input id="inputTxt" name="name" value={Name} onChange={nameHandler}></input>

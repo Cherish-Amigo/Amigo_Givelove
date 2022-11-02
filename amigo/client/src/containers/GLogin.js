@@ -26,7 +26,7 @@ function Login() {
     e.preventDefault();
     let body = {
       id: Id,
-      pass: Password
+      password: Password
     };
     axios
       .post("/teamAuth/login", body)

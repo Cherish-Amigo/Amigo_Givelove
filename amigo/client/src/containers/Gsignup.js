@@ -74,7 +74,7 @@ function Gsignup() {
       name: Name,
       businessnum : Businessnum,
       id: Id,
-      pass: Password
+      password: Password
     };
     axios
       .post("/teamAuth/join", body)

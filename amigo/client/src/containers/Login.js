@@ -26,7 +26,7 @@ function Login() {
     e.preventDefault();
     let body = {
       id: Id,
-      pass: Password
+      password: Password
     };
     axios
       .post("/userAuth/login", body)
@@ -44,7 +44,7 @@ function Login() {
               <div id="id">아이디</div>
               <input type="text" name="id" value={Id} onChange={idHandler}></input>
               <div id="password">비밀번호</div>
-              <input type="password" name="pass" value={Password} onChange={passwordHandler}></input>
+              <input type="password" name="password" value={Password} onChange={passwordHandler}></input>
               <br />
               <button id="loginButton" type="submit">로그인</button>
             </form>
