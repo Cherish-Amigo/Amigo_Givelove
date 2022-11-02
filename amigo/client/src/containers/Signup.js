@@ -58,8 +58,8 @@ function Signup() {
               <div id="id">아이디</div>
               <input id="idInput" name="id" value={Id} onChange={idHandler}></input>
               <button id="ck">중복확인</button>
-              <div id="password" name="password" value={Password} onChange={passwordHandler}>비밀번호</div>
-              <input id="inputTxt" type="password"></input>
+              <div id="password">비밀번호</div>
+              <input id="inputTxt" type="password" name="password" value={Password} onChange={passwordHandler}></input>
               <div>이름</div>
               <input id="inputTxt" name="name" value={Name} onChange={nameHandler}></input>
               <div>전화번호</div>

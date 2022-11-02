@@ -1,0 +1,98 @@
+.MakeDonate {
+    width: 1480px;
+    margin: 0 auto;
+}
+
+.MakeDonate .name {
+    background: black;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.MakeDonate .name .title {
+    width: 1200px;
+    margin: 0 auto;
+    color: white;
+    font-size: 22px;
+}
+
+.MakeDonate .choose .button {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.MakeDonate .choose .button .checkbox {
+    float: left;
+    appearance: none;
+    border: 1.5px solid gainsboro;
+    border-radius: 50px;
+    width: 20px;
+    margin-left: -30px;
+    height: 20px;
+}
+
+.MakeDonate .choose .button .checkbox:checked {
+    border-color: transparent;
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e");
+    background-size: 100% 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-color: #1D2088;
+}
+
+.MakeDonate .choose .choose_name {
+    text-align: center;
+    font-weight: 400;
+    line-height: 46px;
+    letter-spacing: -0.02em;
+    font-size: 16px;
+    margin-top: 60px;
+}
+
+.MakeDonate .choose .check_money {
+    width: 350px;
+    height: 350px;
+    font-weight: 400;
+    margin-left: 15px;
+    font-size: 18px;
+    line-height: 41px;
+    letter-spacing: -0.02em;
+    background: white;
+    border: none;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.MakeDonate .choose .check_money .money {
+    width: 280px;
+    height: 280px;
+    display: flex;
+    margin: auto;
+}
+
+.MakeDonate .choose .check_article {
+    width: 350px;
+    height: 350px;
+    font-weight: 400;
+    margin-left: 15px;
+    font-size: 18px;
+    line-height: 41px;
+    letter-spacing: -0.02em;
+    background: white;
+    border: none;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.MakeDonate .choose .check_article .article {
+    width: 280px;
+    height: 280px;
+    display: flex;
+    margin: auto;
+}
+
+.MakeDonate .hr {
+    margin: 150px 0 100px 0;
+}

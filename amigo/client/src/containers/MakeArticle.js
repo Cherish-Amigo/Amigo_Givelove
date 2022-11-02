@@ -35,6 +35,7 @@ const MakeArticle = () => {
         setPopup(!popup);
     }
 
+    
     // const [fileImage, setFileImage] = useState("");
 
     // // 파일 저장
@@ -50,9 +51,6 @@ const MakeArticle = () => {
     return (
         <div className="MakeArticle">
             <header>
-                <div className="name">
-                    <p className="title">물품 기부 만들기</p>
-                </div>
                 <div className='main_text'>
                     <form action='http://localhost:5000/donationItem/register' method='post'>
                         <p className='text'>기부 설명</p>

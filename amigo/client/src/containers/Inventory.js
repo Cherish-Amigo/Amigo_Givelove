@@ -7,10 +7,10 @@ function Inventory() {
         {
             field.map(element => {
                 return (
-                    <div id="check-container">
-                      <input id="checkbox" type="checkbox"/>
-                      <p id="cartagori">{element}</p>
-                    </div>
+                  <div id="check-container">
+                    <input id="checkbox" type="checkbox"/>
+                    <p id="cartagori">{element}</p>
+                  </div>
                 )
             })
         }

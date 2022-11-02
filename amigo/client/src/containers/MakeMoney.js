@@ -1,19 +1,8 @@
-import money from '../image/money.png';
-import article from '../image/article.png';
 import {useNavigate} from 'react-router-dom';
 import Checkbox from './Checkbox';
 import './MakeMoney.css';
 
 const banks = ['', 'NH농협', '국민은행', '기업은행', '신한은행', '우리은행', '하나은행', '카카오뱅크', '케이뱅크', '토스뱅크', 'SC제일', '경남은행', '광주은행', '대구은행', '부산은행', '산업은행', '수협은행', '전북은행', '제주은행', '한국씨티은행', '새마을금고', '신협', '상호저축은행', '산림조합', '우체국']
-
-const checkOnlyOne = (checkThis) => {
-    const checkboxes = document.getElementsByName('method')
-    for (let i = 0; i < checkboxes.length; i++) {
-      if (checkboxes[i] !== checkThis) {
-        checkboxes[i].checked = false
-      }
-    }
-  }
 
 const MakeMoney = () => {
     let navigate=useNavigate();
@@ -28,21 +17,6 @@ const MakeMoney = () => {
     return (
         <div className='MakeMoney'>
             <haeder>
-                <div className='name'>
-                    <p className='title'>기부 만들기</p>
-                </div>
-                <div className='choose'>
-                    <p className='choose_name'>당신이 만들 기부의 종류를 선택해 주세요</p>
-                    <div className='button'>
-                        <div className='check_money'>
-                            <label for="money"><input className="checkbox" type="checkbox" id="money" name="method" onChange={(e) => checkOnlyOne(e.target)}/><img src={money} className="money" alt="money" />금액 기부</label>
-                        </div>
-                        <div className='check_article'>
-                            <label for="article"><input className="checkbox" type="checkbox" id="article" name="method" onChange={(e) => checkOnlyOne(e.target)}/><img src={article} className="article" alt="article" />물품 기부</label>
-                        </div>
-                    </div>
-                </div>
-                <hr className='hr' />
                 <div className='main_text'>
                     <form action="http://localhost:5000/" method="" >
                         <p className='text'>기부 설명</p>

@@ -3,20 +3,6 @@
     margin: 0 auto;
 }
 
-.MakeArticle .name {
-    background: black;
-    height: 60px;
-    display: flex;
-    align-items: center;
-}
-
-.MakeArticle .name .title {
-    width: 1200px;
-    margin: 0 auto;
-    color: white;
-    font-size: 22px;
-}
-
 .MakeArticle .main_text {
     width: 1000px;
     margin: 0 auto;
@@ -39,6 +25,7 @@
     justify-content: center;
     align-items: center;
     border: 1px solid #A4A4A4;
+    resize: none;
 }
 
 .MakeArticle .main_text .juso {
