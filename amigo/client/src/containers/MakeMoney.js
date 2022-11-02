@@ -21,9 +21,9 @@ const MakeMoney = () => {
     let strtmp = banks.map((bank, index) => {
         return (
             bank
-            );
-      });
-      console.log(strtmp);
+        );
+    });
+    console.log(strtmp);
 
     return (
         <div className='MakeMoney'>
