@@ -16,6 +16,7 @@ function DonateMoney() {
   const [Banknumber, SetBanknumber] = useState("");
   const [Ohtername, SetOthername] = useState("");
   const [Otherbirthday, SetOtherbirthday] = useState("");
+  const [Button, SetButton] = useState("");
 
   const donatenameHandler = (e) => {
     e.preventDefault();
@@ -56,6 +57,11 @@ function DonateMoney() {
     e.preventDefault();
     SetOtherbirthday(e.target.value);
   }
+  
+  const buttonHandler = (e) => {
+    e.preventDefault();
+    SetButton(e.target.value);
+  }
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -66,7 +72,8 @@ function DonateMoney() {
       money: Money,
       bank: Bank,
       othernmae: Ohtername,
-      Otherbirthday: Otherbirthday
+      Otherbirthday: Otherbirthday,
+      button : Button
     }
     axios
       .post("/money/register", body)
@@ -152,8 +159,8 @@ function DonateMoney() {
               <input placeholder="ex) oooo.oo.oo" name="otherbirthday" value={Otherbirthday} onChange={otherbirthdayHandler} ></input> 
             </div>
           </div>
+          <button name="button" value={Button} onChange={buttonHandler} >기부하기</button>
         </form>
-        <button onClick={()=>{ navigate('/Main') }}>기부하기</button>
       </div>
     </>
   );

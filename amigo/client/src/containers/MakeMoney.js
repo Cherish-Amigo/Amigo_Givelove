@@ -12,7 +12,6 @@ const MakeMoney = () => {
             bank
         );
     });
-    console.log(strtmp);
 
     return (
         <div className='MakeMoney'>
