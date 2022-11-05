@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import './MakeArticle.css';
 import {useNavigate} from 'react-router-dom';
 import Checkbox from './Checkbox';
@@ -6,15 +6,38 @@ import CollectionMethod from './CollectionMethod';
 import Post from '../components/Post';
 
 const MakeArticle = () => {
-    const [text, setText] = useState('');
-
     const [save, setSave] = useState('');
- 
-    const onChange = (e) => {
-        setText(e.target.value);
-    };
 
     const [word, setWord] = useState(0)
+
+    const nextId = useRef(1);
+
+    const onInsert = useCallback(
+        text => {
+            const saves = {
+                id: nextId.current,
+                text,
+            };
+            setSave(save.concat(saves));
+            nextId.current += 1;
+        },
+        [save],
+    )
+    const [text, setText] = useState('');
+
+    const onChange = useCallback(e => {
+        setWord(1);
+        setText(e.target.vale);
+    })
+
+    const onSubmit = useCallback(
+        e => {
+            onInsert(text);
+            setText('');
+            e.preventDefault();
+        },
+        [onInsert, text],
+    );
 
     let navigate=useNavigate();
     
@@ -56,15 +79,11 @@ const MakeArticle = () => {
                         <p className='text'>기부 설명</p>
                         <textarea className='explanation' />
                         <p className='text'>기부 받고 싶은 물품 목록</p>
-                        <div className='give_thing'>
+                        <div className='give_thing' onSubmit={onSubmit}>
                             <input className='thing' onChange={onChange} value={text} />
-                            <button className='add' onClick={() => {
-                                setWord(1)
-                                setText('')
-                                setSave(text)
-                                }}>추가</button>
+                            <button className='add'>추가</button>
                             {
-                                word===1 ? <div><button>{save}</button></div> : null
+                                word===1 ? <div><p>{save}</p></div> : null
                             }
                         </div>
                         <p className='text'>주소</p>

@@ -131,7 +131,7 @@ function DonateMoney() {
               <input placeholder="ex) oooo.oo.oo" name="otherbirthday" value={Otherbirthday} onChange={otherbirthdayHandler} ></input> 
             </div>
           </div>
-          <button name="button" value={Button} onChange={buttonHandler} >기부하기</button>
+          <button name="button" value={Button} onChange={buttonHandler}>기부하기</button>
         </form>
       </div>
     </>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useRef, useState} from 'react';
 import picture1 from '../image/main-picture1.png';
 import story1 from '../image/story1.png';
 import story2 from '../image/story2.png';
@@ -6,16 +6,30 @@ import story3 from '../image/story3.png';
 import story4 from '../image/story4.png';
 import './Main.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Main = () => {
 
     let navigate=useNavigate();
 
-    const [text, setText] = useState('');
+    const [Index, setIndex] = useState('');
 
-    const onChange = (e) => {
-        setText(e.target.value);
-    };
+    const nextcnt = useRef(1);
+
+    const indexHandler = (e) => {
+        e.prevateDefault();
+        setIndex(e.target.value);
+    }
+
+    const buttonHandler = (e) => {
+        e.prevateDefault();
+        let body = {
+            nextcnt
+        };
+        axios
+            .get("page/main/:search/:category/:page", body)
+            .then((res) => console.log(res));
+    }
 
     return (
         <div className='Main'>
@@ -48,7 +62,9 @@ const Main = () => {
                             <p className='tag'>#다문화 가정</p>
                         </div>
                     </div>
-                    <button className='more'>더보기</button>
+                    <form onSubmit={buttonHandler}>
+                        <button className='more' name="index" value={Index} onChange={indexHandler} onClick={nextcnt.current += 1}>더보기</button>
+                    </form>
                 </div>
             </header>
         </div>
