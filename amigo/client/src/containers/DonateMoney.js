@@ -1,12 +1,9 @@
 import React, {useState} from "react";
 import axios from 'axios';
 import "./DonateMoney.css";
-import {useNavigate} from 'react-router-dom';
 import Donateheader from "../components/Donateheader";
 
 function DonateMoney() {
-  
-  let navigate=useNavigate();
 
   const [Donatename, SetDonatename] = useState("");
   const [Birthday, SetBirthday] = useState("");
