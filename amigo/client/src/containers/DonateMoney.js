@@ -70,7 +70,7 @@ function DonateMoney() {
       phonenumber: Phonenumber,
       money: Money,
       bank: Bank,
-      othernmae: Ohtername,
+      othername: Ohtername,
       Otherbirthday: Otherbirthday,
       button : Button
     }
