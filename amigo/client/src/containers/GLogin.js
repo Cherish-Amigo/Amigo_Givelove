@@ -39,7 +39,7 @@ function Login() {
             <img src={LoginImg} id="LoginImg" alt="LoginImg" />
         <div id="loginInput">
             <img src={BlackLogo} id="BlackLogo" alt="BlackLogo" />
-            <p id="loginText">로그인</p>
+            <p id="loginText">단체 로그인</p>
             <form onSubmit={submitHandler}>
               <div id="id">아이디</div>
               <input type="text" name="id" value={Id} onChange={idHandler} ></input>

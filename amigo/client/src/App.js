@@ -48,7 +48,7 @@ function App() {
           <Route path="/Makedonate" element={<MakeDonate />} />
           <Route path="/Donatemoney" element={<DonateMoney />} />
           <Route path="DonateGoods" element={<DonateGoods />} />
-          <Route path="GLogin" element={<GLogin />} />
+          <Route path="Glogin" element={<GLogin />} />
         </Routes>
 
       <Footer />

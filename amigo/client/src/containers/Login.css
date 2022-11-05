@@ -84,13 +84,24 @@
 #loginInput #Q{
     color: #868686;
     font-size: 10px;
-
     margin-left: 25%;
+}
+
+#loginInput #G{
+    color: #868686;
+    font-size: 10px;
+    margin-left: 25%;
+}
+
+#loginInput #G .Group_login {
+    color: #1D2088;
+    background-color:transparent;
+    border: none;
+    font-size: 10px;
 }
 
 #loginInput p button{
     color: #1D2088;
-
     background-color:transparent;
     border: none;
     font-size: 10px;

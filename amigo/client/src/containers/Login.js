@@ -48,7 +48,8 @@ function Login() {
               <br />
               <button id="loginButton" type="submit">로그인</button>
             </form>
-            <p id="Q">아직 회원이 아닌신가요?<button onClick={()=>{ navigate('/signup') }}>회원가입</button></p>
+            <p id="Q">아직 회원이 아닌신가요?<button onClick={()=>{ navigate('/Signup') }}>회원가입</button></p>
+            <p id="G">단체 회원 이신가요?<button className="Group_login" onClick={()=>{ navigate('/Glogin') }}>단체 로그인</button></p>
         </div>
     </div>
     </>

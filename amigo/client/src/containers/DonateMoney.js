@@ -106,7 +106,6 @@ function DonateMoney() {
               <select>
                 <option>은행선택</option>
                 <optgroup class="text" label="국내은행" />
-                <option value={Bank} name="bank" onChange={bankHandler} >국민은행</option>
                 <option value={Bank} name="bank" onChange={bankHandler} >기업은행</option>
                 <option value={Bank} name="bank" onChange={bankHandler} >농협은행</option>
                 <option value={Bank} name="bank" onChange={bankHandler} >신한은행</option>
