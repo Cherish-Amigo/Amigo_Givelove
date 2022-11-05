@@ -2,14 +2,14 @@ import {useNavigate} from 'react-router-dom';
 import Checkbox from './Checkbox';
 import './MakeMoney.css';
 
-const banks = ['', 'NH농협', '국민은행', '기업은행', '신한은행', '우리은행', '하나은행', '카카오뱅크', '케이뱅크', '토스뱅크', 'SC제일', '경남은행', '광주은행', '대구은행', '부산은행', '산업은행', '수협은행', '전북은행', '제주은행', '한국씨티은행', '새마을금고', '신협', '상호저축은행', '산림조합', '우체국']
+const banks = ['은행선택', 'NH농협', '국민은행', '기업은행', '신한은행', '우리은행', '하나은행', '카카오뱅크', '케이뱅크', '토스뱅크', 'SC제일', '경남은행', '광주은행', '대구은행', '부산은행', '산업은행', '수협은행', '전북은행', '제주은행', '한국씨티은행', '새마을금고', '신협', '상호저축은행', '산림조합', '우체국']
 
 const MakeMoney = () => {
     let navigate=useNavigate();
 
     let strtmp = banks.map((bank, index) => {
         return (
-            bank
+            <option>{bank}</option>
         );
     });
 

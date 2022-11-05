@@ -3,6 +3,8 @@ import axios from 'axios';
 import "./DonateMoney.css";
 import Donateheader from "../components/Donateheader";
 
+const banks = ['은행선택', 'NH농협', '국민은행', '기업은행', '신한은행', '우리은행', '하나은행', '카카오뱅크', '케이뱅크', '토스뱅크', 'SC제일', '경남은행', '광주은행', '대구은행', '부산은행', '산업은행', '수협은행', '전북은행', '제주은행', '한국씨티은행', '새마을금고', '신협', '상호저축은행', '산림조합', '우체국']
+
 function DonateMoney() {
 
   const [Donatename, SetDonatename] = useState("");
@@ -77,6 +79,12 @@ function DonateMoney() {
       .then((res)=>console.log(res));
   }
 
+  let strtmp = banks.map((bank, index) => {
+    return (
+        <option value={Bank} name="bank" onChange={bankHandler} >{bank}</option>
+    );
+  });
+
   return (
     <>
       <Donateheader />
@@ -107,40 +115,7 @@ function DonateMoney() {
             </div>
             <div class="info">
               <div>은행명 </div>
-              <select>
-                <option>은행선택</option>
-                <optgroup class="text" label="국내은행" />
-                <option value={Bank} name="bank" onChange={bankHandler} >기업은행</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >농협은행</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >신한은행</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >산업은행</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >우리은행</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >한국씨티은행</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >하나은행</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >SC제일은행</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >경남은행</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >광주은행</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >대구은행</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >부산은행</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >새마을금고</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >신협중앙회</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >우체국</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >전북은행</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >제주은행</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >케이뱅크</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >토스뱅크</option>
-                <optgroup />
-                <optgroup class="text" label="해외은행" />
-                <option value={Bank} name="bank" onChange={bankHandler} >도이치은행</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >뱅크오브아메리카</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >중국건설은행</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >중국공상은행</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >중국은행</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >BNP파리바은행</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >HSBC은행</option>
-                <option value={Bank} name="bank" onChange={bankHandler} >JP모간체이스은행</option>
-                <optgroup />
-              </select>
+              <select className="bank">{strtmp}</select>
             </div>
             <div class="info">
               <div>계좌번호 </div>
