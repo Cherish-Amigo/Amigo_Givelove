@@ -66,7 +66,7 @@ function Gsignup() {
   const submitHandler = (e) => {
     e.preventDefault();
     let body = {
-      kanme : Kname,
+      kname : Kname,
       ename: Ename,
       number: Number,
       address : Address,

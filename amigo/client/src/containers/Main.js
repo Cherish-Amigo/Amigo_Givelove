@@ -12,60 +12,69 @@ const Main = () => {
 
     let navigate=useNavigate();
 
-    const [Index, setIndex] = useState('');
-
     const nextcnt = useRef(1);
 
-    const indexHandler = (e) => {
+    const [Search, setSearch] = useState('');
+    const [Cartagori, setCartagori] = useState('');
+
+    const searchHandler = (e) => {
         e.prevateDefault();
-        setIndex(e.target.value);
+        setSearch(e.target.value);
     }
 
-    const buttonHandler = (e) => {
+    const cartagoriHandler = (e) => {
+        e.prevateDefault();
+        setCartagori(e.target.value);
+    }
+
+    const submitHandler = (e) => {
         e.prevateDefault();
         let body = {
+            search: Search,
+            cartagori: Cartagori,
             nextcnt
         };
+        let url = '/page/main/' + Search + '/' + Cartagori + '/' + nextcnt;
         axios
-            .get("page/main/:search/:category/:page", body)
+            .get(url, body)
             .then((res) => console.log(res));
     }
 
     return (
         <div className='Main'>
             <header>
-                <div className='header'>
-                    <img src={picture1} className="picture1" alt="picture1" />
-                    <input type="serarch" placeholder="검색어를 입력해 주세요" />
-                </div>
-                <div className='contents'>
-                    <p className='select'>전체 / 금액 기부 / 물품 기부</p>
-                    <div className='donation'>
-                        <div className='add'>
-                            <img src={story1} className="story" alt="story" onClick={()=>{ navigate('/MoneyDetail') }}/>
-                            <p className='agency'>굿네이버스</p>
-                            <p className='tag'>#다문화 가정</p>
-                        </div>
-                        <div className='add'>
-                            <img src={story2} className="story" alt="story" />
-                            <p className='agency'>굿네이버스</p>
-                            <p className='tag'>#다문화 가정</p>
-                        </div>
-                        <div className='add'>
-                            <img src={story3} className="story" alt="story" />
-                            <p className='agency'>굿네이버스</p>
-                            <p className='tag'>#다문화 가정</p>
-                        </div>
-                        <div className='add'>
-                            <img src={story4} className="story" alt="story" />
-                            <p className='agency'>굿네이버스</p>
-                            <p className='tag'>#다문화 가정</p>
-                        </div>
+                <form onChange={submitHandler}>
+                    <div className='header'>
+                        <img src={picture1} className="picture1" alt="picture1" />
+                        <input type="serarch" placeholder="검색어를 입력해 주세요" name="Search" value={Search} onChange={searchHandler} /> {/*아무것도 안적히면 : all, 적혀있으면 적혀있는값*/}
                     </div>
-                    <form onSubmit={buttonHandler}>
-                        <button className='more' name="index" value={Index} onChange={indexHandler} onClick={nextcnt.current += 1}>더보기</button>
-                    </form>
-                </div>
+                    <div className='contents'>
+                        <p className='select'>전체 / 금액 기부 / 물품 기부</p> {/* cartegory : money, item, all*/}
+                        <div className='donation'>
+                            <div className='add'>
+                                <img src={story1} className="story" alt="story" onClick={()=>{ navigate('/MoneyDetail') }}/>
+                                <p className='agency'>굿네이버스</p>
+                                <p className='tag'>#다문화 가정</p>
+                            </div>
+                            <div className='add'>
+                                <img src={story2} className="story" alt="story" />
+                                <p className='agency'>굿네이버스</p>
+                                <p className='tag'>#다문화 가정</p>
+                            </div>
+                            <div className='add'>
+                                <img src={story3} className="story" alt="story" />
+                                <p className='agency'>굿네이버스</p>
+                                <p className='tag'>#다문화 가정</p>
+                            </div>
+                            <div className='add'>
+                                <img src={story4} className="story" alt="story" />
+                                <p className='agency'>굿네이버스</p>
+                                <p className='tag'>#다문화 가정</p>
+                            </div>
+                        </div>
+                        <button className='more' onClick={nextcnt.current += 1}>더보기</button>
+                    </div>
+                </form>
             </header>
         </div>
     );
