@@ -49,7 +49,11 @@ const Main = () => {
                         <input type="serarch" placeholder="검색어를 입력해 주세요" name="Search" value={Search} onChange={searchHandler} /> {/*아무것도 안적히면 : all, 적혀있으면 적혀있는값*/}
                     </div>
                     <div className='contents'>
-                        <p className='select'>전체 / 금액 기부 / 물품 기부</p> {/* cartegory : money, item, all*/}
+                        <div className='select'>
+                            <button className='cartegori_all' name="cartagori" value={Cartagori} onChange={cartagoriHandler}>전체&nbsp;&nbsp;&nbsp;/</button>
+                            <button className='cartegori_money' name="cartagori" value={Cartagori} onChange={cartagoriHandler}>금액 기부&nbsp;&nbsp;/</button>
+                            <button className='cartegori_item' name="cartagori" value={Cartagori} onChange={cartagoriHandler}>물품 기부</button>
+                        </div> {/* cartegory : money, item, all*/}
                         <div className='donation'>
                             <div className='add'>
                                 <img src={story1} className="story" alt="story" onClick={()=>{ navigate('/MoneyDetail') }}/>

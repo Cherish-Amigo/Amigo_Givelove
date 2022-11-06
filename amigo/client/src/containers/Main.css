@@ -32,10 +32,29 @@
 }
 
 .Main .contents .select {
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
     font-size: 18px;
     margin-top: 80px;
     margin-bottom: 60px;
+}
+
+.Main .contents .select .cartegori_all {
+    border: none;
+    background: transparent;
+    font-size: 19px;
+}
+
+.Main .contents .select .cartegori_money {
+    border: none;
+    background: transparent;
+    font-size: 19px;
+}
+
+.Main .contents .select .cartegori_item {
+    border: none;
+    background: transparent;
+    font-size: 19px;
 }
 
 .Main .contents .donation {

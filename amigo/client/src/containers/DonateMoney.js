@@ -70,6 +70,7 @@ function DonateMoney() {
       phonenumber: Phonenumber,
       money: Money,
       bank: Bank,
+      banknnumber: Banknumber,
       othername: Ohtername,
       Otherbirthday: Otherbirthday,
       button : Button
@@ -81,7 +82,7 @@ function DonateMoney() {
 
   let strtmp = banks.map((bank, index) => {
     return (
-        <option value={Bank} name="bank" onChange={bankHandler} >{bank}</option>
+        <option>{bank}</option>
     );
   });
 
@@ -114,8 +115,8 @@ function DonateMoney() {
               <p id="amounttext">원</p>
             </div>
             <div class="info">
-              <div>은행명 </div>
-              <select className="bank">{strtmp}</select>
+              <div>은행명</div>
+              <select className="bank" value={Bank} name="bank" onChange={bankHandler}>{strtmp}</select>
             </div>
             <div class="info">
               <div>계좌번호 </div>

@@ -13,6 +13,7 @@ function Signup() {
   const [Password, setPassword] = useState("");
   const [Name, setName] = useState("");
   const [Number, setNumber] = useState("");
+  const [Button, setButton] = useState("");
 
   const idHandler = (e) => {
     e.preventDefault();
@@ -34,6 +35,11 @@ function Signup() {
     setNumber(e.target.value);
   }
 
+  const buttonHandler = (e) => {
+    e.preventDefault();
+    setButton(e.target.value);
+  }
+
   const submitHandler = (e) => {
     e.preventDefault();
     let body = {
@@ -43,8 +49,18 @@ function Signup() {
       number: Number
     };
     axios
-    .post("/userAuth/join", body)
-    .then((res)=>console.log(res));
+      .post("/userAuth/join", body)
+      .then((res)=>console.log(res));
+  }
+
+  const buttonsubmitHandler = (e) => {
+    e.preventDefault();
+    let body = {
+      button: Button
+    };
+    axios
+      .post("/userAuth/check", body)
+      .then((res)=>console.log(res));
   }
 
   return (
@@ -57,7 +73,9 @@ function Signup() {
             <form onSubmit={submitHandler}>
               <div id="id">아이디</div>
               <input id="idInput" name="id" value={Id} onChange={idHandler}></input>
-              <button id="ck">중복확인</button>
+              <form onSubmit={buttonsubmitHandler}>
+                <button id="ck" name="button" value={Button} onChange={buttonHandler} >중복확인</button>  
+              </form>
               <div id="password">비밀번호</div>
               <input id="inputTxt" type="password" name="password" value={Password} onChange={passwordHandler}></input>
               <div>이름</div>
