@@ -17,6 +17,7 @@ function Gsignup() {
   const [Businessnum, setBusinessnum] = useState("");
   const [Id, setId] = useState("");
   const [Password, setPassword] = useState("");
+  const [Button, setButton] = useState("");
 
   const knameHandler = (e) => {
     e.preventDefault();
@@ -63,6 +64,11 @@ function Gsignup() {
     setPassword(e.target.value);
   }
 
+  const buttonHandler = (e) => {
+    e.preventDefault();
+    setButton(e.target.value);
+  }
+
   const submitHandler = (e) => {
     e.preventDefault();
     let body = {
@@ -79,6 +85,17 @@ function Gsignup() {
     axios
       .post("/teamAuth/join", body)
       .then((res) => console.log(res));
+  }
+
+  const buttonsubmitHandler = (e) => {
+    e.preventDefault();
+    let body = {
+      id: Id,
+      button: Button
+    };
+    axios
+      .post("/teamAuth/check", body)
+      .then((res)=>console.log(res));
   }
 
   return (
@@ -104,7 +121,9 @@ function Gsignup() {
             <input placeholder="'-'포함하여 작성" name="businessnum" value={Businessnum} onChange={businessnumHandler}></input>
             <div id="gid">아이디</div>
             <input id="idInput" name="id" value={Id} onChange={idHandler}></input>
-            <button class="ckbutton">중복확인</button>
+            <form onSubmit={buttonsubmitHandler}>
+              <button class="ckbutton" name="button" value={Button} onChange={buttonHandler} >중복확인</button>
+            </form>
             <div id="gpw">비밀번호</div>
             <input type="password" name="password" value={Password} onChange={passwordHandler}></input>
             <br />
