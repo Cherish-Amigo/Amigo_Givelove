@@ -17,7 +17,6 @@ function Gsignup() {
   const [Businessnum, setBusinessnum] = useState("");
   const [Id, setId] = useState("");
   const [Password, setPassword] = useState("");
-  const [Button, setButton] = useState("");
 
   const knameHandler = (e) => {
     e.preventDefault();
