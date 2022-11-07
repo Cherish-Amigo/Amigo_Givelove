@@ -78,7 +78,13 @@ function Gsignup() {
     };
     axios
       .post("/teamAuth/join", body)
-      .then((res) => console.log(res));
+      .then((res) => {
+        if(res.status===200) {
+          alert("로그인 성공");
+        } else {
+          alert("로그인 또는 비밀번호가 틀렸습니다.");
+        }
+      });
   }
 
   const buttonsubmitHandler = (e) => {
