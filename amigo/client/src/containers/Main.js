@@ -2,7 +2,7 @@ import React, {useRef, useState} from 'react';
 import picture1 from '../image/main-picture1.png';
 import './Main.css';
 import axios from 'axios';
-import Main_donation from './Main_donation';
+import MainDonation from './MainDonation';
 
 const Main = () => {
     const nextcnt = useRef(1);
@@ -48,7 +48,7 @@ const Main = () => {
                             <button className='cartegori_item' name="cartagori" value={Cartagori} onChange={cartagoriHandler}>물품 기부</button>
                         </div> {/* cartegory : money, item, all*/}
                         <div className='things'>
-                            <Main_donation />
+                            <MainDonation />
                         </div>
                         <button className='more' onClick={nextcnt.current += 1}>더보기</button>
                     </div>

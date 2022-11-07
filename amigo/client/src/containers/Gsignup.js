@@ -79,10 +79,11 @@ function Gsignup() {
     axios
       .post("/teamAuth/join", body)
       .then((res) => {
-        if(res.status===202) {
-          alert("회원가입 성공");
-        } else if(res.status===401){
-          alert("회원가입 실패");
+        if(res.data.status===202) {
+          alert(res.data.message);
+          navigate('/GLogin');
+        } else if(res.data.status===401){
+          alert(res.data.message);
         }
       });
   }

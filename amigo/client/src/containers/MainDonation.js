@@ -3,14 +3,14 @@ import story2 from '../image/story2.png';
 import story3 from '../image/story3.png';
 import story4 from '../image/story4.png';
 import { useNavigate } from 'react-router-dom';
-import './Main_donation.css';
+import './MainDonation.css';
 
-const Main_donation = () => {
+const MainDonation = () => {
     
     let navigate=useNavigate();
 
     return (
-        <div className='Main_donation'>
+        <div className='MainDonation'>
             <div className='donation'>
                 <div className='add'>
                     <img src={story1} className="story" alt="story" onClick={()=>{ navigate('/MoneyDetail') }}/>
@@ -37,4 +37,4 @@ const Main_donation = () => {
     )
 }
 
-export default Main_donation;
+export default MainDonation;

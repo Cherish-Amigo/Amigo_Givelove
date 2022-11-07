@@ -31,10 +31,11 @@ function Login() {
     axios
       .post("/userAuth/login", body)
       .then((res) => {
-        if(res.status===203) {
-          alert("로그인 성공");
-        } else if(res.status===402){
-          alert("아이디 또는 비밀번호가 틀렸습니다.");
+        if(res.data.status===203) {
+          alert(res.data.message);
+          navigate('/Main');
+        } else if(res.data.status===402){
+          alert(res.data.message);
         }
       });
   };
