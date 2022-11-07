@@ -30,7 +30,13 @@ function Login() {
     };
     axios
       .post("/teamAuth/login", body)
-      .then((res) => console.log(res));
+      .then((res) => {
+        if(res.status===203) {
+          alert(res.message);
+        } else if(res.status===402){
+          alert(res.message);
+        }
+      });
   }
 
   return (

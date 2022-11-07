@@ -46,9 +46,9 @@ function Signup() {
       .post("/userAuth/join", body)
       .then((res) => {
         if(res.status===200) {
-          alert("로그인 성공");
-        } else {
-          alert("로그인 또는 비밀번호가 틀렸습니다.");
+          alert(res.message);
+        } else if(res.status===401){
+          alert(res.message);
         }
       });
   }
