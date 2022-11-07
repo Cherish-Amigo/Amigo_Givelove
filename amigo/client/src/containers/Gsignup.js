@@ -64,11 +64,6 @@ function Gsignup() {
     setPassword(e.target.value);
   }
 
-  const buttonHandler = (e) => {
-    e.preventDefault();
-    setButton(e.target.value);
-  }
-
   const submitHandler = (e) => {
     e.preventDefault();
     let body = {
@@ -90,8 +85,7 @@ function Gsignup() {
   const buttonsubmitHandler = (e) => {
     e.preventDefault();
     let body = {
-      id: Id,
-      button: Button
+      id: Id
     };
     axios
       .post("/teamAuth/check", body)
@@ -122,7 +116,7 @@ function Gsignup() {
             <div id="gid">아이디</div>
             <input id="idInput" name="id" value={Id} onChange={idHandler}></input>
             <form onSubmit={buttonsubmitHandler}>
-              <button class="ckbutton" name="button" value={Button} onChange={buttonHandler} >중복확인</button>
+              <button class="ckbutton" name="id" value={Id} onChange={idHandler} >중복확인</button>
             </form>
             <div id="gpw">비밀번호</div>
             <input type="password" name="password" value={Password} onChange={passwordHandler}></input>
