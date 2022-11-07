@@ -1,0 +1,34 @@
+.Main_donation .donation {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.Main_donation .donation .story {
+    width: 250px;
+    height: 250px;
+}
+
+.Main_donation .donation p{
+    margin: 0;
+    text-align: left;
+    margin-left: 15px;
+}
+
+.Main_donation .donation .agency {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 35px;
+    letter-spacing: -0.02em;
+}
+
+.Main_donation .donation .tag {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    color: #A4A4A4;
+}
