@@ -1,0 +1,30 @@
+#donateheaderbox{
+    background-color: black;
+    width: 1360px;
+    height: 150px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+    color: white;
+}
+
+
+#header p{
+    font-size: 20px;
+    margin-left: 280px;
+
+    float: left;
+}
+
+#header button{
+    margin-top: 50px;
+    margin-left: 650px;
+    
+    font-size: 15px;
+    color: white;
+    background-color:transparent;
+
+
+    float: left;
+}

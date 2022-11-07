@@ -1,0 +1,9 @@
+.postmodal{
+    background : rgba(0,0,0,0.25);
+    display: 'block';
+    position: 'relative';
+    top: '0%';
+    width: '400px';
+    height: '400px';
+    padding: '7px';
+}

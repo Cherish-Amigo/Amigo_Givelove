@@ -1,0 +1,96 @@
+.MoneyDetail {
+    width: 1480px;
+    margin: 0 auto;
+}
+
+.MoneyDetail .header .money {
+    width: 1480px;
+    height: 500px;
+}
+
+.MoneyDetail .imformation {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.MoneyDetail .imformation p{
+    margin: 0;
+}
+
+.MoneyDetail .imformation .select {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 26px;
+    letter-spacing: -0.02em;
+    color: #1D2088;
+    margin-top: 30px;
+}
+
+.MoneyDetail .imformation .agency {
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    color: black;
+    display: flex;
+    line-height: 46px;
+    align-items: center;
+    word-spacing: 15px;
+}
+
+.MoneyDetail .imformation .agency .categories {
+    display: flex;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    color: #A4A4A4;
+}
+
+.MoneyDetail .imformation .introduce {
+    display: flex;
+    word-break: keep-all;
+}
+
+.MoneyDetail .total_amount {
+    margin: 60px 0 90px 0;
+    height: 100px;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MoneyDetail .total_amount .total {
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    White-space: pre-wrap;
+}
+
+.MoneyDetail .total_amount .money {
+    font-size: 30px;
+    color: white;
+    display: flex;
+}
+
+.MoneyDetail .total_amount p{
+    margin: 0;
+}
+
+.MoneyDetail .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 170px;
+}
+
+.MoneyDetail .donation {
+    width: 300px;
+    height: 60px;
+    background: #1D2088;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    border: none;
+}

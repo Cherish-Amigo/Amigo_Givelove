@@ -1,0 +1,125 @@
+.MakeMoney {
+    width: 1480px;
+    margin: 0 auto;
+}
+
+.MakeMoney .main_text {
+    width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 240px;
+}
+
+.MakeMoney .main_text .under_text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.MakeMoney .main_text .under_text .text_left {
+    width: 286px;
+}
+
+.MakeMoney .main_text .under_text .text_right {
+    width: 560px;
+}
+
+.MakeMoney .main_text .text {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 29px;
+    letter-spacing: -0.02em;
+    color: #000000;
+    display: flex;
+    align-items: center;
+}
+
+.MakeMoney .main_text .cartagori_text {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 29px;
+    letter-spacing: -0.02em;
+    color: #000000;
+    margin-bottom: 0;
+}
+
+.MakeMoney .main_text .explanation {
+    width: 1000px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #A4A4A4;
+    resize: none;
+}
+
+.MakeMoney .main_text .text_box {
+    width: 280px;
+    height: 40px;
+    border: 1px solid #A4A4A4;
+}
+
+.MakeMoney .main_text .bank {
+    width: 286px;
+    height: 45px;
+    border: 1px solid #A4A4A4;
+    font-size: 15px;
+}
+
+.MakeMoney input {
+    outline: none;
+
+}
+
+.MakeMoney .main_text .detail_text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    color: #A4A4A4;
+    padding-left: 10px;
+}
+
+.MakeMoney .main_text .pictures {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+
+.MakeMoney .main_text .image {
+    display: flex;
+    width: 160px;
+    height: 158px;
+    background-color: white;
+    border: 1px solid #A4A4A4;
+    cursor: pointer;
+    background-image: url('../image/picture.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.MakeMoney .main_text .button {
+    width: 560px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.MakeMoney .main_text .back {
+    width: 260px;
+    height: 55px;
+    background: transparent;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: -0.02em;
+    color: #1D2088;
+    border: 1px solid #1D2088;
+}
+
+.MakeMoney .main_text .make_donation {
+    width: 260px;
+    height: 55px;
+    background: #1D2088;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    border: none;
+}

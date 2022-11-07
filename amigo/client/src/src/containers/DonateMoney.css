@@ -1,0 +1,98 @@
+#donatemoney{
+    margin-bottom: 100px;
+}
+
+#donatemoney #text{
+    width: 800px;
+    height: 60px;
+
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+    border-bottom: 2px solid #A4A4A4;
+
+    font-weight: 800;
+    font-size: 25px;
+}
+
+#donatemoney #userinfo, #donatemoney #payment{
+    width: 800px;
+    margin: 0 auto;
+    align-items: center;
+
+    margin-top: 70px;
+
+    font-size: 18px;
+}
+
+#donatemoney .info{
+    margin-left: 10px;
+    margin-top: 35px;
+    font-size: 20px;
+
+    display: flex; 
+
+    margin-right: 20px;
+}
+
+#donatemoney .info div{
+    width: 180px;
+}
+
+#donatemoney .info #numtext{
+    margin: 5px 0 0 10px;
+    font-size: 13px;
+    color: #A4A4A4;
+}
+
+#donatemoney .info #amounttext{
+    margin: 0 0 0 8px;
+    font-size: 18px;
+}
+
+#donatemoney .info #acnumtext{
+    margin: -5px 0 0 15px;
+    font-size: 13px;
+    color: #A4A4A4;
+}
+
+#donatemoney .info input{
+    border: 1px solid #A4A4A4;
+    height: 25px;
+    padding-left: 5px;
+}
+
+
+#donatemoney select{
+    width: 180px;
+    border: 1px solid #A4A4A4;
+    height: 30px;
+}
+#donatemoney select .text{
+    background-color: #1D2088;
+    color: white;
+}
+
+#donatemoney button{
+    width: 300px;
+    height: 50px;
+
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    
+    margin-top: 150px;
+
+    background-color: #1D2088;
+
+    color: white;
+    justify-content: center;
+    font-size: 15px;
+    
+}
+
+#donatemoney input::placeholder{
+    color: #A4A4A4;
+    font-size: 11px;
+}

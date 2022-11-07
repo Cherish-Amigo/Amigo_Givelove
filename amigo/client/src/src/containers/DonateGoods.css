@@ -1,0 +1,133 @@
+#donategoods{
+    margin-bottom: 100px;
+}
+
+#donategoods #text{
+    width: 800px;
+    height: 60px;
+
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+    border-bottom: 2px solid #A4A4A4;
+
+    font-weight: 800;
+    font-size: 25px;
+}
+
+#donategoods #userinfo, #donategoods #donation{
+    width: 800px;
+    margin: 0 auto;
+    align-items: center;
+
+    margin-top: 70px;
+
+    font-size: 18px;
+}
+
+#donategoods #donation{
+    margin-top: 100px;
+}
+
+#donategoods .info{
+    margin-left: 10px;
+    margin-top: 35px;
+    font-size: 20px;
+
+    display: flex; 
+
+    margin-right: 20px;
+}
+
+#donategoods .info div{
+    width: 180px;
+}
+
+#donategoods .info #numtext{
+    margin: 5px 0 0 10px;
+    font-size: 13px;
+    color: #A4A4A4;
+}
+
+
+
+#donategoods .info input{
+    border: 1px solid #A4A4A4;
+    height: 25px;
+    padding-left: 5px;
+}
+
+#donategoods #donate{
+    width: 300px;
+    height: 50px;
+
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    
+    margin-top: 150px;
+
+    background-color: #1D2088;
+    border: none;
+
+    color: white;
+    justify-content: center;
+    font-size: 15px;
+    
+}
+
+#donategoods input::placeholder{
+    color: #A4A4A4;
+    font-size: 11px;
+}
+
+#donategoods #donation .exp{
+    margin: 35px 0 0 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#donategoods #donation #address{
+    height: 35px;
+    width: 285px;
+    margin-top: 20px;
+    margin-left: 10px;
+    padding-left: 10px;
+
+    border: 1px solid #A4A4A4;
+}
+
+#donategoods #donation #find{
+    height: 40px;
+    width: 100px;
+
+    margin-left: 15px;
+
+    background-color: #1D2088;
+    color: white;
+    border: none;
+}
+
+#donategoods #donation #detailaddress{
+    height: 35px;
+    width: 400px;
+    padding-left: 10px;
+
+    margin-top: 15px;
+    margin-left: 10px;
+    border: 1px solid #A4A4A4;
+
+}
+
+#donategoods #warnning{
+    max-width: fit-content;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+    margin-top: 30px;
+
+    font-size: 15px;
+    color: red;
+}

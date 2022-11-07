@@ -1,0 +1,30 @@
+#myheaderbox{
+    background-color: black;
+    width: 1360px;
+    height: 150px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+    color: white;
+}
+
+
+#myheader p{
+    font-size: 20px;
+    margin-left: 200px;
+
+    float: left;
+}
+
+#myheader button{
+    margin-top: 50px;
+    margin-left: 500px;
+    
+    font-size: 15px;
+    color: white;
+    background-color:transparent;
+
+
+    float: left;
+}
