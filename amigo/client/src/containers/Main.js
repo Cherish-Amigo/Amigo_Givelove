@@ -33,9 +33,8 @@ const Main = () => {
             cartagori: Cartagori,
             nextcnt
         };
-        let url = '/page/main/' + Search + '/' + Cartagori + '/' + nextcnt;
         axios
-            .get(url, body)
+            .get('/page/main/' + Search + '/' + Cartagori + '/' + nextcnt, body)
             .then((res) => console.log(res));
     }
 
