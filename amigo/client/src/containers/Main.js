@@ -22,6 +22,12 @@ const Main = () => {
 
     const submitHandler = (e) => {
         e.prevateDefault();
+        if(Search.length === 0) {
+            Search = 'all';
+        }
+        if(Cartagori.length === 0) {
+            Cartagori = 'all';
+        }
         let body = {
             search: Search,
             cartagori: Cartagori,
