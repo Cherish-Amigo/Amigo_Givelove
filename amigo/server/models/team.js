@@ -19,33 +19,33 @@ module.exports = class Team extends Sequelize.Model {
         type: Sequelize.STRING(100),
         allowNull: false,
       },
-      korea_name: {
+      companyKoreanName: {
         type: Sequelize.STRING(10),
         allowNull: false,
       },
-      english_name: {
+      companyEnglishName: {
         type: Sequelize.STRING(10),
         allowNull: false,
       },
-      email: {
-        type: Sequelize.STRING(30),
-        allowNull: true,
-      },
-      mobile: {
+      phoneNumber: {
         type: Sequelize.STRING(11),
-        allowNull: true,
+        allowNull: false,
       },
       address: {
         type: Sequelize.STRING(50),
+        allowNull: false,
+      },
+      detailAddress: {
+        type: Sequelize.STRING(100),
         allowNull: true,
       },
-      ceo: {
+      representativeName: {
         type: Sequelize.STRING(11),
-        allowNull: true,
+        allowNull: false,
       },
-      business_number: {
+      businessLicenseNumber: {
         type: Sequelize.STRING(30),
-        allowNull: true,
+        allowNull: false,
       },
     }, {
       sequelize,

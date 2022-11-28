@@ -10,6 +10,7 @@ function Signup() {
   let navigate=useNavigate();
 
   const [Id, setId] = useState("");
+  const [checkId, setcheckId] = useState(false);
   const [Password, setPassword] = useState("");
   const [Name, setName] = useState("");
   const [Number, setNumber] = useState("");
@@ -42,16 +43,21 @@ function Signup() {
       name : Name,
       number: Number
     };
-    axios
-      .post("/userAuth/join", body)
-      .then((res) => {
-        if(res.data.status===202) {
-          alert(res.data.message);
-          navigate('/Login');
-        } else if(res.data.status===401){
-          alert(res.data.message);
-        }
-      });
+
+    if (checkId){
+      axios
+        .post("/userAuth/join", body)
+        .then((res) => {
+          if(res.data.status===202) {
+            alert(res.data.message);
+            navigate('/Login');
+          } else if(res.data.status===401){
+            alert(res.data.message);
+          }
+        });
+    }else {
+      alert("ID 중복체크를 해주세요");
+    }
   }
 
   const buttonsubmitHandler = (e) => {
@@ -59,9 +65,19 @@ function Signup() {
     let body = {
       id: Id
     };
+    console.log("ID 중복 확인");
     axios
       .post("/userAuth/check", body)
-      .then((res)=>console.log(res));
+      .then((res)=> {
+        console.log(res.data.status);
+        if (res.data.status === 201){
+          setcheckId(true);
+          alert("사용 가능한 ID 입니다.");
+        }else {
+          setcheckId(false);
+          alert("사용 불가능한 ID 입니다.");
+        }
+      });
   }
 
   return (
@@ -74,9 +90,9 @@ function Signup() {
             <form onSubmit={submitHandler}>
               <div id="id">아이디</div>
               <input id="idInput" name="id" value={Id} onChange={idHandler}></input>
-              <form onSubmit={buttonsubmitHandler}>
-                <button id="ck" name="id" value={Id} onChange={idHandler} >중복확인</button>  
-              </form>
+              {/* <form onSubmit={buttonsubmitHandler}> */}
+                <button id="ck" onClick={buttonsubmitHandler} >중복확인</button>  
+              {/* </form> */}
               <div id="password">비밀번호</div>
               <input id="inputTxt" type="password" name="password" value={Password} onChange={passwordHandler}></input>
               <div>이름</div>

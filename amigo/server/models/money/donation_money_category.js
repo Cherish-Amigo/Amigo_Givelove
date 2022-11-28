@@ -10,7 +10,7 @@ module.exports = class Donation_money_category extends Sequelize.Model {
         primaryKey: true,
         autoIncrement: true,
       },
-      name: {
+      category: {
         type: Sequelize.STRING(20),
         allowNull: false,
       },

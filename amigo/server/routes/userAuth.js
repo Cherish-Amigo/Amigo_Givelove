@@ -3,35 +3,84 @@
   const bcrypt = require('bcrypt');
   const { isLoggedIn, isNotLoggedIn } = require('./middlewares');
   const User = require('../models/user');
-
+  const Team = require('../models/team');
   const router = express.Router();
 
-  router.post('/join', isNotLoggedIn, async (req, res, next) => {
-    const { id, password, name, email, mobile } = req.body;
+  // User Join Check
+
+  router.post('/check', isNotLoggedIn, async (req, res, next) => {
+    
+    const { id } = req.body;
+
     try {
       const exUser = await User.findOne({ where: { id } });
-      if (exUser) {
-        return res.redirect('/join?error=exist');
+
+      if (!exUser) { 
+        res.json({ 
+          status: 201,  
+          message: 'id 사용 가능',
+        });
+      }else{
+        return res.json({ 
+          status: 401,
+          message: "id 사용 불가능 ( id 중복 )",
+        });
       }
-      const hash = await bcrypt.hash(password, 12);
-      await User.create({
-        id, 
-        password : hash, 
-        name, 
-        email, 
-        mobile,
-      });
-      console.log("회원가입 성공");
-      res.json({ 
-        statusCode: 200,  
-        message: '회원 가입 성공'
-      });
-      // return res.redirect('/');
     } catch (error) {
       console.error(error);
-      return next(error);
+      res.json({ 
+        status: 500,  
+        message: error,
+      });
     }
   });
+
+  // User Join Router
+
+  // Not Login
+
+  router.post('/join', isNotLoggedIn, async (req, res, next) => {
+    
+    const { id, password, name, number } = req.body;
+
+    try {
+      const exUser = await User.findOne({ where: { id } });
+      const exTeam = await Team.findOne({ where: { id } });
+
+      console.log(exUser);
+      console.log(exTeam);
+
+      if (exUser != null || exTeam != null) { 
+        return res.json({ 
+          status: 401,
+          message: "회원 가입 실패 (id 중복)",
+        });
+      }
+
+      const hash = await bcrypt.hash(password, 12);
+
+      await User.create({
+        id : id, 
+        password : hash,
+        name : name, 
+        phoneNumber : number,
+      });
+
+      res.json({ 
+        status: 202,  
+        message: '회원 가입 성공',
+      });
+
+    } catch (error) {
+      console.error(error);
+      res.json({ 
+        status: 500,  
+        message: error,
+      });
+    }
+  });
+
+  // User Login Router
 
   router.post('/login', isNotLoggedIn, (req, res, next) => {
     passport.authenticate('user', (authError, user, info) => {
@@ -41,7 +90,7 @@
       }
       if (!user) {
         return res.json({
-          statusCode: 400,
+          status: 402,
           message: info.message,
         });
       }
@@ -51,21 +100,23 @@
           return next(loginError);
         }
         return res.json({
-          statusCode: 200, 
+          type: "User",
+          status: 203, 
+          data: req.user,
           message: '로그인 성공',
         });
-        // return res.redirect('/');
       });
-    })(req, res, next); // 미들웨어 내의 미들웨어에는 (req, res, next)를 붙입니다.
+    })(req, res, next);
   });
+
+  // User Logout Router
 
   router.get('/logout', isLoggedIn, (req, res) => {
       req.logout();
       req.session.destroy();
-      // res.redirect('/');
       res.json({
-        statusCode: 200,
-        message: "로그아웃 성공",
+        status: 204,
+        message: "회원 로그아웃 성공",
       });
   });
 

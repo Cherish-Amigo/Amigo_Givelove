@@ -15,9 +15,9 @@ function Header() {
           <img src={NavLogo} id='BlackLogo' alt="BlackLogo" />
         </div>
         <div id='MenuBar'>
-          <p class='menu' onClick={()=>{ navigate('/home') }}>홈</p>
-          <p class='menu' onClick={()=>{ navigate('/Main') }}>기부</p>
-          <p class='menu' onClick={()=>{ navigate('/mypage') }}>MY</p>
+          <p className='menu' onClick={()=>{ navigate('/home') }}>홈</p>
+          <p className='menu' onClick={()=>{ navigate('/Main') }}>기부</p>
+          <p className='menus' onClick={()=>{ navigate('/MakeDonate') }}>기부만들기</p>
           <p id='login' onClick={()=>{ navigate('/login') }}>로그인</p>
         </div>
       </div>

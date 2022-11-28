@@ -10,9 +10,37 @@ module.exports = class Money extends Sequelize.Model {
         primaryKey: true,
         autoIncrement: true,
       },
-      money: {
+      donorName: {
+        type: Sequelize.STRING(100),
+        allowNull: false,
+      },
+      dateBirth: {
+        type: Sequelize.BIGINT,
+        allowNull: false,
+      },
+      phoneNumber: {
+        type: Sequelize.STRING(11),
+        allowNull: true,
+      },
+      aidAmount: {
         type: Sequelize.STRING(100),
         allowNull: true,
+      },
+      nameBank: {
+        type: Sequelize.STRING(100),
+        allowNull: false,
+      },
+      bankAccountNumber: {
+        type: Sequelize.BIGINT,
+        allowNull: false,
+      },
+      accountHolderName: {
+        type: Sequelize.STRING(100),
+        allowNull: false,
+      },
+      accountHolderDateBirth: {
+        type: Sequelize.BIGINT,
+        allowNull: false,
       },
     }, {
       sequelize,

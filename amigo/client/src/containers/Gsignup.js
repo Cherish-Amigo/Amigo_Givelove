@@ -16,6 +16,7 @@ function Gsignup() {
   const [Name, setName] = useState("");
   const [Businessnum, setBusinessnum] = useState("");
   const [Id, setId] = useState("");
+  const [checkId, setcheckId] = useState(false);
   const [Password, setPassword] = useState("");
 
   const knameHandler = (e) => {
@@ -76,16 +77,20 @@ function Gsignup() {
       id: Id,
       password: Password
     };
-    axios
-      .post("/teamAuth/join", body)
-      .then((res) => {
-        if(res.data.status===202) {
-          alert(res.data.message);
-          navigate('/GLogin');
-        } else if(res.data.status===401){
-          alert(res.data.message);
-        }
-      });
+    if(checkId){
+      axios
+        .post("/teamAuth/join", body)
+        .then((res) => {
+          if(res.data.status===202) {
+            alert(res.data.message);
+            navigate('/GLogin');
+          } else {
+            alert(res.data.message);
+          }
+        });
+    }else{
+      alert("ID 중복체크를 해주세요");
+    }
   }
 
   const buttonsubmitHandler = (e) => {
@@ -93,9 +98,19 @@ function Gsignup() {
     let body = {
       id: Id
     };
+    console.log("ID 중복 확인");
     axios
       .post("/teamAuth/check", body)
-      .then((res)=>console.log(res));
+      .then((res)=> {
+        console.log(res.data.status);
+        if (res.data.status === 201){
+          setcheckId(true);
+          alert("사용 가능한 ID 입니다.");
+        }else {
+          setcheckId(false);
+          alert("사용 불가능한 ID 입니다.");
+        }
+      });
   }
 
   return (
@@ -113,7 +128,7 @@ function Gsignup() {
             <input placeholder="'-'포함하여 작성" name='number' value={Number} onChange={numberHandler}></input>
             <div id='address'>주소</div>
             <input id="addressInput" name="address" value={Address} onChange={addressHandler}></input>
-            <button class="ckbutton">주소찾기</button> <br />
+            <button className="ckbutton">주소찾기</button> <br />
             <input placeholder='상세주소' className='address2' name="address2" value={Address2} onChange={address2Handler}></input>
             <div id="name">대표자명</div>
             <input placeholder="한국지사 대표자명 입력" name="name" value={Name} onChange={nameHandler}></input>
@@ -121,9 +136,10 @@ function Gsignup() {
             <input placeholder="'-'포함하여 작성" name="businessnum" value={Businessnum} onChange={businessnumHandler}></input>
             <div id="gid">아이디</div>
             <input id="idInput" name="id" value={Id} onChange={idHandler}></input>
-            <form onSubmit={buttonsubmitHandler}>
-              <button class="ckbutton" name="id" value={Id} onChange={idHandler} >중복확인</button>
-            </form>
+            {/* <form onSubmit={buttonsubmitHandler}> */}
+              {/* <button className="ckbutton" name="id" value={Id} onChange={idHandler} >중복확인</button> */}
+              <button className="ckbutton" onClick={buttonsubmitHandler} >중복확인</button>  
+            {/* </form> */}
             <div id="gpw">비밀번호</div>
             <input type="password" name="password" value={Password} onChange={passwordHandler}></input>
             <br />

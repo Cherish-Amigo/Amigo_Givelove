@@ -21,8 +21,8 @@ import GLogin from './containers/GLogin';
 
 function App() {
   const callApi = async () => {
-    axios.get("/api").then((res) => {
-      console.log(res.data.test);
+    axios.get("/").then((res) => {
+      console.log("Welcome to Give Love");
     });
   };
 
@@ -40,15 +40,15 @@ function App() {
           <Route path="/Main" element={<Main />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Signup" element={<Signup />} />
-          <Route path="Gsignup" element={<Gsignup />} />
+          <Route path="/Gsignup" element={<Gsignup />} />
           <Route path="/Dmypage" element={<Dmypage />} />
           <Route path="/Gmypage" element={<Gmypage />} />
           <Route path="/Moneydetail" element={<MoneyDetail />} />
           <Route path="/Articledetail" element={<ArticleDetail />} />
           <Route path="/Makedonate" element={<MakeDonate />} />
           <Route path="/Donatemoney" element={<DonateMoney />} />
-          <Route path="DonateGoods" element={<DonateGoods />} />
-          <Route path="Glogin" element={<GLogin />} />
+          <Route path="/DonateGoods" element={<DonateGoods />} />
+          <Route path="/Glogin" element={<GLogin />} />
         </Routes>
 
       <Footer />

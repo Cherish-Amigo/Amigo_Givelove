@@ -1,7 +1,11 @@
 import './ArticleDetail.css';
 import article1 from '../image/article1.png';
+import { useNavigate } from 'react-router-dom';
 
 const ArticleDetail = () => {
+
+    let navigate=useNavigate();
+
     return (
         <div className='ArticleDetail'>
             <header>
@@ -17,7 +21,7 @@ const ArticleDetail = () => {
                     <p className='article'>기부 받고 싶은 물품 목록                    <p className='items'>휴지 양말 옷 양말</p></p>
                 </div>
                 <div className='button'>
-                    <button className='donation'>기부하기</button>
+                    <button className='donation' onClick={() => { navigate('/DonateGoods')}}>기부하기</button>
                 </div>
             </header>
         </div>

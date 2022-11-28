@@ -7,18 +7,19 @@ const Team = require('../models/team');
 const router = express.Router();
 
 router.put('/update/:id', async (req, res, next) => {
-  const { password, korea_name, english_name, email, mobile, address, ceo, business_number } = req.body;
+  const { password, kname, ename, number, address, address2, name, businessnum } = req.body;
+
   try {
     const hash = await bcrypt.hash(password, 12);
     await Team.update({
-        password : hash, 
-        korea_name, 
-        english_name,
-        email, 
-        mobile,
-        address,
-        ceo,
-        business_number,
+        password : hash,
+        companyKoreanName : kname,
+        companyEnglishName : ename,
+        phoneNumber : number,
+        address : address,
+        detailAddress : address2,
+        representativeName : name,
+        businessLicenseNumber : businessnum
     }, {
       where: { id : req.params.id },
     });
@@ -27,10 +28,12 @@ router.put('/update/:id', async (req, res, next) => {
       statusCode: 200, 
       message: '팀 수정 성공',
     });
-    // return res.redirect('/');
   } catch (error) {
     console.error(error);
-    return next(error);
+    res.json({ 
+      status: 500,  
+      message: error,
+    });
   }
 });
 
@@ -38,11 +41,40 @@ router.delete('/delete/:id', async (req, res) => {
 //   console.log(req.params.id);
   await Team.destroy({ where: { id : req.params.id } });
     console.log("팀 탈퇴 성공");
-    // res.redirect('/');
     return res.json({
       statusCode: 200, 
       message: '팀 탈퇴 성공',
     });
 });
+
+// 전체 user 찾기
+
+// router.get('/select', (req, res, next) => {
+//   Team.findAll({})
+//     .then((team) => {
+//       console.log(team);
+//       res.json(team);
+//     })
+//     .catch((err) => {
+//       console.error(err);
+//       next(err);
+//     })
+// });
+
+// 특정 user 찾기
+
+// router.get('/select/:id', (req, res, next) => {
+//   Team.find({
+//     where: { id: req.params.id }
+//   })
+//     .then((team) => {
+//       console.log(team);
+//       res.json(team);
+//     })
+//     .catch((err) => {
+//       console.error(err);
+//       next(err);
+//     })
+// });
 
 module.exports = router;

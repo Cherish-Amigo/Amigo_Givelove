@@ -72,15 +72,15 @@ function DonateGoods() {
           <form onSubmit={submitHandler}>
             <div id="userinfo">
               <div id="text">기부자 정보</div>
-              <div class="info">
+              <div className="info">
                 <div>기부자명 </div>
                 <input name="donatename" value={Donatename} onChange={donatenameHandler} ></input> 
               </div> 
-              <div class="info">
+              <div className="info">
                 <div>생년월일 </div>
                 <input placeholder="ex) 19980101" name="birthday" value={Birthday} onChange={birthdayHandler} ></input> 
               </div>
-              <div class="info">
+              <div className="info">
                 <div>전화번호 </div>
                 <input placeholder="ex) 01012345678" name="phonenumber" value={Phonenumber} onChange={phonenumberHandler}></input> 
                 <p id="numtext">‘-’ 를 제외한 숫자만 입력해 주세요.</p>
@@ -88,9 +88,9 @@ function DonateGoods() {
             </div>
             <div id="donation">
               <div id="text">물품 기증</div>
-              <p class="exp">기부할 물품 목록(1개 이상)</p>
+              <p className="exp">기부할 물품 목록(1개 이상)</p>
               <Inventory />
-              <p class="exp" id="adrstext">주소</p>
+              <p className="exp" id="adrstext">주소</p>
               <input id='address' type="text" required={true} name="address" onChange={handleInput} value={enroll_company.address}/>
                           <button id='find' onClick={handleComplete}>찾기</button><br />
                           {popup && <Post company={enroll_company} setcompany={setEnroll_company}></Post>}

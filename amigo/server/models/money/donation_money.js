@@ -11,25 +11,45 @@ module.exports = class Donation_money extends Sequelize.Model {
         autoIncrement: true,
       },
       name: {
-        type: Sequelize.STRING(100),
+        type: Sequelize.STRING(50),
         allowNull: false,
       },
-      bank: {
-        type: Sequelize.STRING(20),
+      donationType: {
+        type: Sequelize.STRING(50),
         allowNull: false,
       },
-      account: {
-        type: Sequelize.STRING(20),
-        allowNull: false,
-      },
-      owner_name: {
-        type: Sequelize.STRING(20),
-        allowNull: false,
-      },
-      explanation: {
+      donationDescription: {
         type: Sequelize.TEXT,
         allowNull: true,
       },
+      minimumContributionAmount: {
+        type: Sequelize.BIGINT,
+        allowNull: false,
+      },
+      nameBank: {
+        type: Sequelize.STRING(50),
+        allowNull: false,
+      },
+      bankAccountNumber: {
+        type: Sequelize.BIGINT,
+        allowNull: false,
+      },
+      accountHolder: {
+        type: Sequelize.STRING(50),
+        allowNull: false,
+      },
+      firstImage: {
+        type: Sequelize.STRING(50),
+        allowNull: true,
+      },
+      secondImage: {
+        type: Sequelize.STRING(50),
+        allowNull: true,
+      },
+      thirdImage: {
+        type: Sequelize.STRING(50),
+        allowNull: true,
+      }
     }, {
       sequelize,
       timestamps: true,

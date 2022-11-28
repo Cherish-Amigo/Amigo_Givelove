@@ -10,11 +10,23 @@ module.exports = class Item extends Sequelize.Model {
         primaryKey: true,
         autoIncrement: true,
       },
-      name: {
-        type: Sequelize.STRING(10),
+      donorName: {
+        type: Sequelize.STRING(100),
+        allowNull: false,
+      },
+      dateBirth: {
+        type: Sequelize.BIGINT,
+        allowNull: false,
+      },
+      phoneNumber: {
+        type: Sequelize.STRING(11),
         allowNull: true,
       },
-      explanation: {
+      listItems: {
+        type: Sequelize.STRING(100),
+        allowNull: false,
+      },
+      address: {
         type: Sequelize.TEXT,
         allowNull: true,
       },

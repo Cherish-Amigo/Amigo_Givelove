@@ -11,13 +11,37 @@ module.exports = class Donation_item extends Sequelize.Model {
         autoIncrement: true,
       },
       name: {
-        type: Sequelize.STRING(10),
+        type: Sequelize.STRING(50),
         allowNull: false,
       },
-      explanation: {
+      donationType: {
+        type: Sequelize.STRING(50),
+        allowNull: false,
+      },
+      donationDescription: {
         type: Sequelize.TEXT,
         allowNull: true,
       },
+      address: {
+        type: Sequelize.STRING(100),
+        allowNull: false,
+      },
+      donationCollectionMethod: {
+        type: Sequelize.STRING(100),
+        allowNull: false,
+      },
+      firstImage: {
+        type: Sequelize.STRING(50),
+        allowNull: true,
+      },
+      secondImage: {
+        type: Sequelize.STRING(50),
+        allowNull: true,
+      },
+      thirdImage: {
+        type: Sequelize.STRING(50),
+        allowNull: true,
+      }
     }, {
       sequelize,
       timestamps: true,
@@ -35,6 +59,8 @@ module.exports = class Donation_item extends Sequelize.Model {
     db.Donation_item.hasMany(db.Donation_item_image, { foreignKey: 'Donation_itemId', sourceKey: 'idx'});
     db.Donation_item.hasMany(db.Donation_item_comment, { foreignKey: 'Donation_itemId', sourceKey: 'idx'});
     db.Donation_item.hasMany(db.Donation_item_category, { foreignKey: 'Donation_itemId', sourceKey: 'idx'});
+
+    db.Donation_item.hasMany(db.Donation_item_list, { foreignKey: 'Donation_itemId', sourceKey: 'idx'});
 
     db.Donation_item.belongsTo(db.Team, { foreignKey: 'TeamId', targetKey: 'idx'});
   }  
