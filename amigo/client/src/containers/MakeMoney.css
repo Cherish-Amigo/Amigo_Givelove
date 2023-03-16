@@ -57,7 +57,7 @@
     border: 1px solid #A4A4A4;
 }
 
-.MakeMoney .main_text .bank {
+.MakeMoney .main_text .bank, .minmoney, .account, .owner {
     width: 286px;
     height: 45px;
     border: 1px solid #A4A4A4;
